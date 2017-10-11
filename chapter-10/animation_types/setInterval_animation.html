@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+#sample {
+  position: absolute;
+  background: red;
+  width: 100px;
+  height: 100px;
+}
+    </style>
+  </head>
+  <body>
+    <div id="sample" />
+    <script type="text/javascript">
+var animatedElement = document.getElementById("sample");
+var left = 0;
+var timer;
+var ANIMATION_INTERVAL = 16;
+
+timer = setInterval(function() {
+  left += 10;
+  animatedElement.style.left = left + "px";
+  if ( left >= 400 ) {
+    clearInterval(timer);
+  }
+}, ANIMATION_INTERVAL);
+
+    </script>
+  </body>
+</html>
